@@ -1,6 +1,6 @@
 # Blog
 
-我的博客。本页面会索引一些我写的长文章
+我的博客，readme页面索引了一些我写过的文章。
 
 ## 阅读体验问题
 
@@ -14,3 +14,10 @@
 
 1. [caddy和CA认证： 如何把我的链接从HTTP变成HTTPS？](./network-caddy-certificate.md)
 
+2. [gitea：可自部署的开源git/软件包/容器仓库](./articles/gitea.md)
+
+3. [设计模式：我的一些理解](./articles/design-pattern.md)
+
+4. [k8s: 国内安装和排错](./articles/k8s-installation.md)
+
+5. [termux: 在安卓免root使用命令行](./articles/termux.md)
