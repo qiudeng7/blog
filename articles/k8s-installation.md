@@ -79,9 +79,9 @@ Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docke
 安装cri-docker操作步骤：
 1. 下载二进制文件：
 ```bash
-wget https://github.com/Mirantis/cri-dockerd/releases/download/v0.3.15/cri-dockerd-0.3.15.amd64.tgz
+wget https://github.com/Mirantis/cri-dockerd/releases/download/v0.3.21/cri-dockerd-0.3.21.amd64.tgz
 ```
-2. 解压`tar -xf cri-dockerd-0.3.15.amd64.tgz`
+2. 解压`tar -xf cri-dockerd-0.3.21.amd64.tgz`
 3. 安装`install -o root -g root -m 0755 cri-dockerd/cri-dockerd /usr/local/bin/cri-dockerd`
 4. 配置服务
 ```bash
