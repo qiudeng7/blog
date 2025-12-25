@@ -258,21 +258,27 @@ docker tag registry.aliyuncs.com/google_containers/pause:3.10 registry.k8s.io/pa
 #### 总结
 因此通过国内源拉取镜像的命令如下（k8s版本为1.31）
 ```bash
-docker pull registry.aliyuncs.com/google_containers/kube-apiserver:v1.31.0
-docker pull registry.aliyuncs.com/google_containers/kube-controller-manager:v1.31.0
-docker pull registry.aliyuncs.com/google_containers/kube-scheduler:v1.31.0
-docker pull registry.aliyuncs.com/google_containers/kube-proxy:v1.31.0
-docker pull registry.aliyuncs.com/google_containers/coredns:v1.11.3
-docker pull registry.aliyuncs.com/google_containers/etcd:3.5.15-0
-docker pull registry.aliyuncs.com/google_containers/pause:3.9
-
-docker tag registry.aliyuncs.com/google_containers/kube-apiserver:v1.31.0 registry.k8s.io/kube-apiserver:v1.31.0
-docker tag registry.aliyuncs.com/google_containers/kube-controller-manager:v1.31.0 registry.k8s.io/kube-controller-manager:v1.31.0
-docker tag registry.aliyuncs.com/google_containers/kube-scheduler:v1.31.0 registry.k8s.io/kube-scheduler:v1.31.0
-docker tag registry.aliyuncs.com/google_containers/kube-proxy:v1.31.0 registry.k8s.io/kube-proxy:v1.31.0
-docker tag registry.aliyuncs.com/google_containers/coredns:v1.11.3 registry.k8s.io/coredns/coredns:v1.11.3
-docker tag registry.aliyuncs.com/google_containers/etcd:3.5.15-0 registry.k8s.io/etcd:3.5.15-0
-docker tag registry.aliyuncs.com/google_containers/pause:3.9 registry.k8s.io/pause:3.9
+images=$(kubeadm config images list 2>/dev/null | grep "^registry\.k8s\.io/")
+for img in $images; do
+    name_tag=${img#registry.k8s.io/}
+    
+    # coredns is special
+    if [[ $name_tag == coredns/* ]]; then
+        aliyun_img="registry.aliyuncs.com/google_containers/${name_tag#coredns/}"
+    else
+        aliyun_img="registry.aliyuncs.com/google_containers/${name_tag}"
+    fi
+    
+    echo "download: $aliyun_img"
+    sudo docker pull $aliyun_img
+    
+    echo "rename: $img"
+    sudo docker tag $aliyun_img $img
+    
+    echo "untag: $aliyun_img"
+    sudo docker rmi $aliyun_img
+    echo "---"
+done
 ```
 
 ---
