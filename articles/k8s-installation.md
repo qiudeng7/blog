@@ -373,10 +373,10 @@ worker2   NotReady   <none>          35s    v1.31.3
 CNI插件选择calico，安装过程参考 [Quick Start| Calico Docs](https://docs.tigera.io/calico/latest/getting-started/kubernetes/quickstart)
 1. 安装Tigera Calico operator
 ```bash
-kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.29.1/manifests/tigera-operator.yaml
+kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.31.3//manifests/tigera-operator.yaml
 ```
 注意这个配置文件很长，不可以用kubectl apply，可以用create和replace。
-2. 安装custom resource，这部分是自定义配置，需要修改后再安装。获取[yaml文件](https://raw.githubusercontent.com/projectcalico/calico/v3.29.1/manifests/custom-resources.yaml)并编辑：
+2. 安装custom resource，这部分是自定义配置，需要修改后再安装。获取[yaml文件](https://raw.githubusercontent.com/projectcalico/calico/v3.31.3//manifests/custom-resources.yaml)并编辑：
 ```yaml
 apiVersion: operator.tigera.io/v1
 kind: Installation
@@ -407,6 +407,20 @@ kubectl apply -f custom-resources.yaml
 ```bash
 watch kubectl get pods -n calico-system
 ```
+### 镜像列表
+下面是安装calico实际用到的镜像列表，对应calico版本 v3.31.3
+```
+quay.io/calico/apiserver:v3.31.3
+quay.io/calico/cni:v3.31.3
+quay.io/calico/csi:v3.31.3
+quay.io/calico/kube-controllers:v3.31.3
+quay.io/calico/node-driver-registrar:v3.31.3
+quay.io/calico/node:v3.31.3
+quay.io/calico/pod2daemon-flexvol:v3.31.3
+quay.io/calico/typha:v3.31.3
+quay.io/tigera/operator:v1.40.3
+```
+
 ### 一个安装失败的debug示例
 查看pod状态会显示
 ```
