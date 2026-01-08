@@ -8,9 +8,9 @@
 ## 目录
 
 1. [一些旧文章](./旧文章/index.md)
-2. [Prometheus](./Prometheus.md)
-3. [Obsidian](./Obsidian/index.md)
-4. [国内服务器网络问题](./国内服务器网络问题.md)
+2. [Obsidian](./2.Obsidian/index.md)
+3. [Prometheus](./3.Prometheus.md)
+4. [国内服务器网络问题](./4.国内服务器网络问题.md)
 
 
 ## 唯一的规范

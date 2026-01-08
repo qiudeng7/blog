@@ -86,11 +86,13 @@ strong {
 选择: 编辑时的引用块
 效果: 设置背景色和padding */
 .HyperMD-quote {
-    padding-top: 0.8em !important;
-    padding-bottom: 0.8em !important;
+    /* padding-top: 0.8em !important;
+    padding-bottom: 0.8em !important;    */
+    line-height: 1.9;
     padding-right: 0.8em !important;
     background-color: var(--BlockqutoeColor_background-color) !important;
 }
+
 
 /* 
 选择: 渲染时的引用块
@@ -167,7 +169,7 @@ strong {
 2. 中文符号转化成 markdown 语法：比如 `···` 会自动变成代码块
 3. 中英文之间自动添加空格
 
-不需要修改默认设置，另外通过命令面板可以格式化全文。
+只保留这几个功能，剩下的我全部关闭了。
 
 ## Open vault in VScode
 
