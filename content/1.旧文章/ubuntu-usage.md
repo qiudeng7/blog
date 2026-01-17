@@ -1,15 +1,6 @@
-# ubuntu 和 windows 双系统
+# 从windows迁移到Ubuntu
 
-最近又有装双系统的念头，我曾经装过双 windows，也装过 linux+windows，现在计划改成 win+win+ubuntu 下面是我的思考过程。
-
-1. 打 apex 太卡了，我觉得是目前的 win11 系统不够纯净导致的，我装了很多日常用的和开发用的软件，我应该安装一个 win10+linux 的双系统。
-2. 看了一些网上的测试之后发现 win11 和 win10 在游戏性能上难分伯仲，和不同游戏各自的优化有很大的关系，换成 win10 也未必就能提升 apex 帧数。
-3. 另外根据以前的经验， linux 在日用体验上有很多各种各样不方便的小毛病需要自己找办法解决：已经解决的比如输入法，比如更换桌面环境；没有自己解决过的比如字体渲染，比如双系统切换会导致时间异常，比如浏览网页触摸板速度异常等等。
-   1. 当然这些问题肯定都是可以解决的，只是需要成本。
-4. 而且如果说 linux 用来工作，不需要优化太多体验细节，能跑就行，win10 也只用来打游戏，那日常使用电脑用什么系统呢？如果用 win10，最后系统还是会装各种各样的软件，如果再装一个新系统，三系统切换又非常麻烦，这背后的核心原因是我的娱乐和生活是有重合的，生活和工作也是有重合的。
-5. 最终的方案是当前系统仍然作为主力系统运行很多杂七杂八的东西，只把两个比较纯粹的和生活无关的需求拆解成两个精简系统，一个是纯粹打 apex 的 win10，一个是纯粹工作的 ubuntu。
-
----
+这是我从 windows 迁移到 ubuntu 的一些经验，大多数都只是搬运，没有太多自己的见解。
 
 ## 无 usb 安装 win+ubuntu 双系统
 
@@ -43,6 +34,8 @@ bcdedit /set {bootmgr} path \EFI\refind\refind_x64.efi
 
 ## 中文输入法
 
+其实在 liveCD 中选择中文，安装的时候就会自带输入法了。
+
 开启中文支持： Settings -> Region & Language -> Manage installed Languages -> Install / Remove Languages -> 点选 Chinese (simplified) -> Apply
 
 添加拼音输入法： Settings -> Region & Language -> Input Sources -> + -> Chinese -> Chinese (Intelligent Pinyin)
@@ -74,7 +67,6 @@ sudo apt install *gtk4
 大概原因是在英文的系统中，显示中文时，日语字体排在中文字体前面所以会显示异体字，需要手动调整顺序。
 
 ```bash
-调整偏好顺序
 sudo cat > /etc/fonts/conf.avail/64-language-selector-prefer.conf  <<EOF
 <?xml version="1.0"?>
 <!DOCTYPE fontconfig SYSTEM "fonts.dtd">

@@ -6,4 +6,4 @@
 2. [Termux](./Termux.md) 
 3. [安装k8s](./k8s-installation.md) 
 4. [gitea](gitea.md) 
-
+5. [从windows迁移到ubuntu](./ubuntu-usage.md)
