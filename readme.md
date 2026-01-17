@@ -7,7 +7,7 @@
 
 ## 目录
 
-1. [一些旧文章](./content/旧文章/index.md)
+1. [一些旧文章](./content/1.旧文章/index.md)
 2. [Obsidian](./content/2.Obsidian/index.md)
 3. [Prometheus](./content/3.Prometheus.md)
 4. [国内服务器网络问题](./content/4.国内服务器网络问题.md)
