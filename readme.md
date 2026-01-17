@@ -7,13 +7,13 @@
 
 ## 目录
 
-1. [一些旧文章](./旧文章/index.md)
-2. [Obsidian](./2.Obsidian/index.md)
-3. [Prometheus](./3.Prometheus.md)
-4. [国内服务器网络问题](./4.国内服务器网络问题.md)
-5. [社交平台爬虫](5.社交平台爬虫.md)
-6. [小众软件index](6.小众软件/小众软件index.md)
-7. [deprecated-开发者如何使用office](7.deprecated-开发者如何使用office.md)
+1. [一些旧文章](./content/旧文章/index.md)
+2. [Obsidian](./content/2.Obsidian/index.md)
+3. [Prometheus](./content/3.Prometheus.md)
+4. [国内服务器网络问题](./content/4.国内服务器网络问题.md)
+5. [社交平台爬虫](./content/5.社交平台爬虫.md)
+6. [小众软件index](./content/6.小众软件/小众软件index.md)
+7. [deprecated-开发者如何使用office](./content/7.deprecated-开发者如何使用office.md)
 
 
 ## 唯一的规范
