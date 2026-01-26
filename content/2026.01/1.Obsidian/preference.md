@@ -2,6 +2,7 @@
 
 总体上我更愿意使用符合 Common Markdown 标准的设置，以及保持 Obsidian 和 Vscode 的一致。
 
+
 ## Obsidian 设置
 ### 编辑器
 

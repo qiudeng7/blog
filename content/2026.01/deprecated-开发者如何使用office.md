@@ -32,7 +32,7 @@
 
 比如我的学校格式要求如下
 
-![](./assets/7.deprecated-开发者如何使用office/6.jpg)
+![](./assets/deprecated-开发者如何使用office/6.jpg)
 
 
 
