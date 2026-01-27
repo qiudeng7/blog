@@ -10,14 +10,17 @@
 
 **2026年一月**
 
-1. [Obsidian](./content/2026.01/1.Obsidian/index.md)
-2. [Prometheus](./content/2026.01/2.Prometheus.md)
-3. [国内服务器网络问题](./content/2026.01/3.国内服务器网络问题.md)
-4. [社交平台爬虫](./content/2026.01/4.社交平台爬虫.md)
-5. [小众软件index](./content/2026.01/5.小众软件.md)
-6. [操作系统和平台](./content/2026.01/6.操作系统和平台.md)
+1. [Obsidian](content/2026.01/Obsidian/index.md)
+2. [Prometheus](content/2026.01/Prometheus.md)
+3. [国内服务器网络问题](content/2026.01/国内服务器网络问题.md)
+4. [社交平台爬虫](content/2026.01/社交平台爬虫.md)
+5. [小众软件](content/2026.01/小众软件.md)
+6. [操作系统和平台](content/2026.01/操作系统和平台.md)
 
-@deprecated [开发者如何使用office](./content/2026.01/deprecated-开发者如何使用office.md)
+弃镐
+
+[开发者如何使用office](content/2026.01/deprecated-开发者如何使用office.md)
+[Rancher](content/2026.01/deprecated-Rancher.md)
 
 **2025年及之前**
 
