@@ -8,7 +8,7 @@
 ## 目录
 
 
-**2026年一月**
+### 2026年一月
 
 1. [Obsidian](content/2026.01/Obsidian/index.md)
 2. [Prometheus](content/2026.01/Prometheus.md)
@@ -19,10 +19,11 @@
 
 弃镐
 
-[开发者如何使用office](content/2026.01/deprecated-开发者如何使用office.md)
-[Rancher](content/2026.01/deprecated-Rancher.md)
+1. [开发者如何使用office](content/2026.01/deprecated-开发者如何使用office.md)
 
-**2025年及之前**
+2. [Rancher](content/2026.01/deprecated-Rancher.md)
+
+### 2025年及之前
 
 其实还写过很多，但是有些不容易迁移，还很多不值得记录，我都懒得花时间了，反正以后写东西也不会停的。
 
@@ -31,7 +32,6 @@
 3. [安装k8s](./content/2025/k8s-installation.md): 学弟学了三天没搞懂，看这篇文章一下午就会了。
 4. [gitea](content/2025/gitea.md) 
 5. [从windows迁移到ubuntu](./content/2025/ubuntu-usage.md)
-
 
 
 ## 规范
