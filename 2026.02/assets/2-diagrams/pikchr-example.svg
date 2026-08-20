@@ -1,0 +1,18 @@
+<svg xmlns='http://www.w3.org/2000/svg' style='font-size:initial;' class="pikchr" viewBox="0 0 619.92 85.68">
+<path d="M7.56,32.4L93.5914,32.4L93.5914,2.16L7.56,2.16Z"  style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="50.5757" y="17.28" text-anchor="middle" font-weight="bold" fill="rgb(0,0,0)" dominant-baseline="central">element</text>
+<path d="M7.56,32.4L7.56,68.4"  style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="7.56" cy="68.4" r="5.4" style="fill:rgb(0,0,0);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<polygon points="50.76,68.4 39.24,72.72 39.24,64.08" style="fill:rgb(0,0,0)"/>
+<path d="M7.56,68.4L45,68.4"  style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);" />
+<path d="M612.36,77.4L617.76,77.4L617.76,59.4L612.36,59.4Z"  style="fill:rgb(0,0,0);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<polygon points="612.36,68.4 600.84,72.72 600.84,64.08" style="fill:rgb(0,0,0)"/>
+<path d="M569.16,68.4L606.6,68.4"  style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);" />
+<path d="M332.626,83.52L481.694,83.52L481.694,53.28L332.626,53.28Z"  style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="407.16" y="68.4" text-anchor="middle" font-style="italic" fill="rgb(0,0,0)" dominant-baseline="central">object-definition</text>
+<polygon points="569.16,68.4 557.64,72.72 557.64,64.08" style="fill:rgb(0,0,0)"/>
+<path d="M481.694,68.4L563.4,68.4"  style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);" />
+<polygon points="332.626,68.4 321.106,72.72 321.106,64.08" style="fill:rgb(0,0,0)"/>
+<path d="M50.76,68.4L326.866,68.4"  style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);" />
+</svg>
+
