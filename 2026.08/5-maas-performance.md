@@ -8,7 +8,7 @@
 
 顺着这个问题，我们对比了一下 Nginx 和 HAProxy 的数据路径：
 
-![Nginx 与 HAProxy 数据路径对比](assets/5-maas-performance/网络代理数据流与零拷贝优化示意图.svg)
+![Nginx 与 HAProxy 数据路径对比](assets/5-maas-performance/网络代理数据流与零拷贝优化示意图.jpg)
 
 传统的 Nginx 转发中，数据需要从内核进入用户态，再从用户态回到内核。这里的 memory copy 不只是多占了一点内存带宽，它还需要 CPU 参与，同时会占用 CPU cache。
 
@@ -16,7 +16,7 @@ HAProxy 则存在另一条值得注意的数据路径：对于只需要转发的
 
 所以我们进一步把 MaaS 的流量拆成了两类：
 
-![MaaS 业务流量与 Token 转发流量](assets/5-maas-performance/认证与Token转发流量示意图.svg)
+![MaaS 业务流量与 Token 转发流量](assets/5-maas-performance/认证与Token转发流量示意图.jpg)
 
 认证、充值、额度查询这些业务流量还是正常进入用户态，因为我们确实需要理解和处理它们。
 
