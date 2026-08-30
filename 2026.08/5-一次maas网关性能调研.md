@@ -136,5 +136,9 @@ XDP 是位于网卡驱动收包路径上的 eBPF 执行点，它能够在网络�
 
 经过调研发现前面所述的 kTLS 正好可以让 eBPF 在内核态中处理 TLS。大致的工作方式是需要应用自行在用户态建立 TCP 连接，然后把协商出的 TLS 版本、加密算法、密钥、IV 和 record sequence 等状态**安装到这个 socket 的 kTLS 上下文中**，随后当网络包抵达socket的时候内核就会自动解包（如果要发送的话就是自动加密）。
 
-但问题在于无论是 golang 还是 nodejs，他们标准库中的 openssl 构建版本都不支持 ktls。 也就是说 node 和 golang 根本没有使用 ktls 的能力，目前只有 C 和 C++ 有。
+但问题在于无论是 golang 还是 nodejs，他们标准库中的 openssl 构建版本都不支持 ktls。 也就是说目前能下载到的官方发行的 node 和 golang 都没有使用 ktls 的能力，目前只有 C 和 C++ 有，所以我计划自己构建一个支持 ktls 的 node。
+
+预计的处理流程如下：
+
+![eBPF 接管 SSE 响应转发流程](assets/5-maas-performance/image-2.png)
 
