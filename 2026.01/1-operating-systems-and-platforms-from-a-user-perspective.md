@@ -27,7 +27,7 @@ wsl 让 windows 成为最好的 linux 发行版（只是玩梗），没有太多
 用 docker 就像用手机一样自然，我不知道该怎么介绍 docker，所有人都应该试试。
 
 1. 入门话题：我没看过 [docker入门文档](https://docs.docker.com/get-started/)，我不确定文档质量如何，看起来还行。需要入门的新手也可以考虑移步 [哔哩哔哩搜索页：docker](https://search.bilibili.com/all?keyword=docker)。
-2. 服务器使用 docker 容易遇到网络问题，我在另一篇文章专门聊这个话题： [国内服务器网络问题](./2-国内服务器网络问题.md)，个人开发者电脑用 docker 直接开虚拟网卡就好了。
+2. 服务器使用 docker 容易遇到网络问题，我在另一篇文章专门聊这个话题： [国内服务器网络问题](./2-server-networking-issues-in-china.md)，个人开发者电脑用 docker 直接开虚拟网卡就好了。
 3. 如果你喜欢追求一些新东西，可以试试 [podman](https://podman.io/)，它最大的亮点是相比docker没有守护进程（但是守护进程未必是不好的东西，远程访问docker的时候很有用），我曾以为它对 compose 的支持不好而没有尝试，刚刚发现它可以直接调用 docker 的 compose 实现，也可以使用自己的 [podman-compose](https://github.com/containers/podman-compose) ，最近要是有空会尝试一下。
 
 ### devcontainer
@@ -107,7 +107,7 @@ k8s的部署和使用是相对割裂的两个问题，有点像安装arch linux�
 
 ### 安装
 
-官方标准的安装方式是 kubeadm，我有一篇文章详细说明了 [国内通过kubeadm安装k8s的困难和解决方案](../2025/3-国内安装k8s.md)。kubeadm 的安装方式对新手来说有一定难度，有助于加强对 k8s 的理解，但其实从实际使用的角度来说并不算高效。
+官方标准的安装方式是 kubeadm，我有一篇文章详细说明了 [国内通过kubeadm安装k8s的困难和解决方案](../2025/3-installing-k8s-in-china-with-kubeadm.md)。kubeadm 的安装方式对新手来说有一定难度，有助于加强对 k8s 的理解，但其实从实际使用的角度来说并不算高效。
 
 获取开发环境的k8s我使用过k3s和kind。[kind](https://kind.sigs.k8s.io/)，让容器成为k8s节点；[k3s](https://k3s-io.github.io/)通过一个二进制文件运行极小的、高度集成的k8s。
 
