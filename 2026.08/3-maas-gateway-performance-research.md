@@ -8,7 +8,7 @@
 
 顺着这个问题，我们对比了一下 Nginx 和 HAProxy 的数据路径：
 
-![Nginx 与 HAProxy 的数据路径对比](assets/5-maas-performance/image-1.png)
+![Nginx 与 HAProxy 的数据路径对比](assets/3-maas-performance/image-1.png)
 
 传统的 Nginx 转发中，数据需要从内核进入用户态，再从用户态回到内核。这里的 memory copy 不只是多占了一点内存带宽，它还需要 CPU 参与，同时会占用 CPU cache。
 
@@ -16,7 +16,7 @@ HAProxy 则存在另一条值得注意的数据路径：对于只需要转发的
 
 所以我们进一步把 MaaS 的流量拆成了两类：
 
-![MaaS 网关中业务流量与 token 流量的数据路径](assets/5-maas-performance/image.png)
+![MaaS 网关中业务流量与 token 流量的数据路径](assets/3-maas-performance/image.png)
 
 认证、充值、额度查询这些业务流量还是正常进入用户态，因为我们确实需要理解和处理它们。
 
@@ -138,7 +138,7 @@ XDP 是位于网卡驱动收包路径上的 eBPF 执行点，它能够在网络�
 
 预计的处理流程如下：
 
-![eBPF 接管 SSE 响应转发流程](assets/5-maas-performance/image-2.png)
+![eBPF 接管 SSE 响应转发流程](assets/3-maas-performance/image-2.png)
 
 但具体实现的时候发现了两个问题：
 
@@ -156,7 +156,7 @@ XDP 是位于网卡驱动收包路径上的 eBPF 执行点，它能够在网络�
 
 明确这些边界之后，数据路径就可以重新设计了，借助 AI 设计了如下方案 A：
 
-![kTLS、Pipe、splice 与 tee 组成的 SSE 响应转发路径](assets/5-maas-performance/image-3.png)
+![kTLS、Pipe、splice 与 tee 组成的 SSE 响应转发路径](assets/3-maas-performance/image-3.png)
 
 这条路径的核心其实是 **Pipe**。Pipe 就是 `ls | grep` 里的管道，只不过我们这里会通过 system call 的函数接口去访问，Shell 里的算是 CLI 接口。数据可以被追加到 Pipe，然后从 Pipe 中被消费。消费过程改变的是 Pipe 自己的读取位置和剩余长度，而不是数据页里的内容，Pipe 的两端都是 fd。
 
@@ -166,7 +166,7 @@ XDP 是位于网卡驱动收包路径上的 eBPF 执行点，它能够在网络�
 
 看起来这是一个不到一千行代码的事件循环，但经验告诉我，进入生产环境后，这部分 C 代码将是需要重点维护的基础设施，甚至有可能需要我们逐步开发成成熟网关。于是我打算先寻找是否有与我的需求和数据路径一致的现成工具，初步尝试设计了一个基于 HAProxy 的方案如下：
 
-![HAProxy 用户态 Filter 与异步后续处理组成的方案 B](assets/5-maas-performance/image-4.png)
+![HAProxy 用户态 Filter 与异步后续处理组成的方案 B](assets/3-maas-performance/image-4.png)
 
 方案 B 的这些操作是纯用户态的，相比而言，方案 A 的主路虽然理论上限更高，但整体数据流却未必比方案 B 更快，因为方案 A 的旁路仍然要把数据转发到用户态做 SSE 解析处理。高压情况下主路只能暂时快，过一会儿旁路就会溢出，主路只能等待旁路处理完成。而方案 B 虽然瞬时上限低一些，却能获得更成熟的开箱即用的网关能力，所以工程上讲，选择方案 B 会更好。
 
@@ -174,7 +174,7 @@ XDP 是位于网卡驱动收包路径上的 eBPF 执行点，它能够在网络�
 
 我开始尝试设计新的基于 HAProxy 的实验，但又发现一个问题。我原本的思路是让 Node.js 先处理 token 请求，后续的 SSE 流量由网关接收转发，但还有一个更好的做法是 Node.js 只做决策，网关承担流量压力，主动向 Node.js 询问少量的权限等决策数据。我们的设计就变成了：
 
-![网关承担数据面、Node.js 业务服务承担决策的实验流程](assets/5-maas-performance/image-5.png)
+![网关承担数据面、Node.js 业务服务承担决策的实验流程](assets/3-maas-performance/image-5.png)
 
 那既然如此，我们也未必一定要使用 HAProxy 了，使用其他网关也可以。简单调研之后发现，现在已经有这种“将 token 流量压力交给网关”的 AI 网关了。
 

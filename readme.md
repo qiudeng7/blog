@@ -8,8 +8,7 @@
 
 1. [work-life-balance](./2026.08/1-work-life-balance.md)
 2. [国内组网服务商](./2026.08/2-networking-service-providers-in-china.md)
-3. [k8s 远程开发环境](./2026.08/4-k8s-remote-development-environment.md)
-4. [一次 MaaS 网关性能调研](./2026.08/5-maas-gateway-performance-research.md)
+3. [一次 MaaS 网关性能调研](./2026.08/3-maas-gateway-performance-research.md)
 
 ### 2026.07
 
