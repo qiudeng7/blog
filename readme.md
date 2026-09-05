@@ -4,6 +4,10 @@
 
 ## 目录
 
+### 2026.09
+
+1. [所谓认知，到底是怎么来的？](./2026.09/2-improving-human-cognition.md)
+
 ### 2026.08
 
 1. [work-life-balance](./2026.08/1-work-life-balance.md)
