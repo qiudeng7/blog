@@ -7,6 +7,7 @@
 ### 2026.09
 
 1. [所谓认知，到底是怎么来的？](./2026.09/2-improving-human-cognition.md)
+2. [重写而非重构](./2026.09/3-rewrite-instead-of-refactor.md)
 
 ### 2026.08
 
