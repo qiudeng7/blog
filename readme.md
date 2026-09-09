@@ -8,6 +8,7 @@
 
 1. [所谓认知，到底是怎么来的？](./2026.09/2-improving-human-cognition.md)
 2. [重写而非重构](./2026.09/3-rewrite-instead-of-refactor.md)
+3. [跨境专线和 BGP](./2026.09/4-cross-border-private-lines-and-bgp.md)
 
 ### 2026.08
 
